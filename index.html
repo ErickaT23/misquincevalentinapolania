@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Quince Valentina Polania</title>
+    <meta property="og:title" content="Mis Quince  Valentina Polania">
+    <meta property="og:description" content="Te invito a mis quince, con amor Valentina Polania.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preload" href="/imagenes/sobre.png" as="image">
+     <!-- Preconnect and Load Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+     <script src="https://cdn.lordicon.com/lordicon.js"></script>   
+</head>
+<body>
+    <div id="starfield"></div>
+    <!-- Sobre de la Invitación -->
+    <div id="envelope">
+        <div id="starfield-envelope"></div> <!-- Aquí estarán las estrellas -->
+        <div id="envelope-top"></div>
+        <div id="seal">
+            <h2 class=" visible" style="transition-delay: 0s;">Mis Quince Valentina Polania</h2>
+        </div>
+        <div id="envelope-bottom"></div>
+    </div>
+    <!-- Contenido de la Invitación -->
+    <div id="invitacion">
+        <!--Header-->
+ <!-- PORTADA -->
+ <!-- PORTADA -->
+<section id="portada" class="hero">
+  
+    <!-- Video de fondo -->
+    <video class="hero__video" 
+           src="/imagenes/video-portada.mp4" 
+           autoplay 
+           muted 
+           loop 
+           playsinline 
+           preload="metadata" 
+           poster="/imagenes/video-portada.png"
+           loading="lazy">
+    </video>
+    
+    <!-- Badge superior con el nombre del invitado -->
+    <div id="badgeInvitado" class="hero__badge" aria-live="polite"></div>
+  
+    <!-- Títulos sobre el video -->
+    <div class="hero__titles">
+      <h1 class="hero__h1">Mis Quince</h1>
+      <h2 class="hero__h2">Valentina Polania</h2>
+    </div>
+  
+    <!-- Estrellas decorativas -->
+    <div class="hero__stars" aria-hidden="true">
+      <img src="/imagenes/ESTRELLAS-D.png" alt="" class="star-img s1">
+      <img src="/imagenes/ESTRELLAS-I.png" alt="" class="star-img s2">
+      <img src="/imagenes/ESTRELLAS-D.png" alt="" class="star-img s3">
+      <img src="/imagenes/ESTRELLAS-I.png" alt="" class="star-img s4">
+      <img src="/imagenes/ESTRELLAS-D.png" alt="" class="star-img s5">
+    </div>
+  </section>
+  
+        <!-- SECCIÓN UNIFICADA CON FONDO -->
+        <section id="celebracion" class="block block--celebracion "
+        style="--bg-url:url('/imagenes/siguiente.png')" loading="lazy">
+
+        <!-- Contenido centrado -->
+        <div class="block__content">
+
+        <!-- Contador e invitación -->
+        <div class="section-countdown">
+        <h1>¡Están invitados!</h1>
+        <p>Nos encanta que sean parte de este momento tan especial para nosotros.</p>
+        <h2>29 . 11 . 2025</h2>
+
+        <div id="contador">
+            <div class="countdown-circle">
+                <span id="dias">00</span>
+                <span>días</span>
+            </div>
+            <div class="countdown-circle">
+                <span id="horas">00</span>
+                <span>horas</span>
+            </div>
+            <div class="countdown-circle">
+                <span id="minutos">00</span>
+                <span>minutos</span>
+            </div>
+            <div class="countdown-circle">
+                <span id="segundos">00</span>
+                <span>segundos</span>
+            </div>
+        </div>
+        <!-- Agregar al Calendario -->
+        <div class="section-calendar">
+            <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M21lcThydG1xc29rcWpjZWFwZmFnazJodjAgY182OTRhZWE0ODlhN2FkZTJiYzRmYjRiNGExYTE2ZmY3ZDY2ZjAzNzFlMTgwY2I1MzZmM2M3YzE2NGUxZWMwOGIxQGc&tmsrc=c_694aea489a7ade2bc4fb4b4a1a16ff7d66f0371e180cb536f3c7c164e1ec08b1%40group.calendar.google.com"> Agregar al calendario</a>
+        </div>
+        </div>
+
+            <!-- Música -->
+            <div class="section-music">
+                <h2>"La dispute - Amélie"</h2>
+                <audio id="musica" controls loop>
+                    <source src="/Yann Tiersen - La dispute - Amélie - piano por Mario Viñuela.mp3" type="audio/mpeg">
+                    Tu navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+
+            <!-- Bendición -->
+            <div class="section-b">
+                <p>Con la bendición de Dios y de mis padres</p>
+                <h1>Angel Farfán</h1>
+                <h2>&</h2>
+                <h1>Genoveva Lucas</h1>
+            </div>
+
+        </div>
+        </section>
+        <!-- SECCIÓN VIDEO DIVISORIA -->
+        <section class="block block--video divider " loading="lazy">
+         <video
+      class="block-video"
+      src="/imagenes/video-foto1.mp4"
+      poster="/imagenes/video-foto1.png"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+    ></video>
+  </section>
+  <!-- SECCIÓN UNIFICADA: Invitados + Itinerario + Regalos + Playlist -->
+        <section id="bloque-informacion" class="block block--fondo"
+        style="--bg-url:url('/imagenes/siguiente.png')" loading="lazy">
+        
+        <div class="block__content">
+            <!-- Invitados y Pases -->
+            <div class="section section--intro">
+<h1>Los invitamos con mucho cariño</h1>
+<h3 id="nombreInvitado"></h3>
+<h3 id="cantidadPases"></h3>
+</div>
+
+<!-- Itinerario -->
+<div class="section itinerary-grid">
+<!-- Ceremonia -->
+<div class="card event-card ceremony">
+      <!-- Foto circular -->
+  <div class="event-photo">
+    <img src="/imagenes/iglesia.png" alt="Ceremonia"/>
+  </div>
+
+<h2>Ceremonia</h2>
+<p>Iglesia Nuestra Señora de Guadalupe</p>
+<div class="details">
+ <div class="time-location">
+   <span class="date">29 Noviembre</span>
+   <span class="separator">|</span>
+   <span class="time">16:45 hrs</span>
+ </div>
+ <p>19 Calle, Zona 10, Ciudad de Guatemala</p>
+ <button type="button" class="direction-button" onclick="elegirAplicacion()">Cómo llegar</button>
+</div>
+</div>
+
+<!-- Recepción -->
+<div class="card event-card party">
+          <!-- Foto circular -->
+  <div class="event-photo">
+    <img src="/imagenes/hotel.png" alt="Hotel"/>
+  </div>
+<h2>Recepción</h2>
+<p>Salón los Reyes, Hotel Barceló</p>
+<div class="details">
+ <div class="time-location">
+   <span class="date">29 Noviembre</span>
+   <span class="separator">|</span>
+   <span class="time">19:00 hrs</span>
+ </div>
+ <p>7 avenida 15-45, Zona 9, Ciudad de Guatemala</p>
+ <button type="button" class="direction-button" onclick="elegirAplicacionOtraDireccion()">Cómo llegar</button>
+</div>
+</div>
+</div>
+
+<!-- Lluvia de sobres -->
+<div class="section-gifts">
+<lord-icon class="icon-gift"
+src="https://cdn.lordicon.com/kezeezyg.json"
+trigger="loop"
+delay="2000"
+stroke="light"
+colors="primary:#4b0082 ,secondary:#9438c5"
+style="width:200px;height:200px">
+</lord-icon>
+<h2>Lluvia de Sobres</h2>
+<p>¡Tu presencia en mis quince es el mejor regalo! Si deseas darme un obsequio, tendremos un cofre en la recepción para que puedas dejar tu sobre con efectivo. ¡Gracias por compartir conmigo este momento tan especial!</p>
+<p>¡Gracias!</p>
+</div>
+
+</div>
+        </section>
+                <!-- SECCIÓN VIDEO DIVISORIA -->
+                <section class="block block--video divider" loading="lazy">
+                    <video
+                 class="block-video"
+                 src="/imagenes/video-foto2.mp4"
+                 poster="/imagenes/video-foto2.png"
+                 autoplay
+                 muted
+                 loop
+                 playsinline
+                 preload="metadata"
+               ></video>
+             </section>
+
+             <!-- SECCIÓN UNIFICADA FINAL (fondo único) -->
+    <section id="bloque-final" class="block block--fondo-final"
+style="--bg-url:url('/imagenes/siguiente.png')" loading="lazy">
+
+<div class="block__content">
+
+<!-- Dress Code -->
+<div class="section">
+<h2>Dress Code</h2>
+<lord-icon
+src="https://cdn.lordicon.com/okgbpdra.json"
+trigger="loop" delay="2000" stroke="light"
+colors="primary:#4b0082 ,secondary:#9438c5"
+style="width:200px;height:200px"></lord-icon>
+<p>De gala colores negro o azul oscuro. Acompáñanos con elegancia en esta celebración inolvidable</p>
+</div>
+
+
+<!-- Buenos deseos -->
+<div class="section-wishes">
+<h2>Buenos deseos</h2>
+<button id="mostrarFormularioBtn">Enviar deseo</button>
+<div id="formularioDeseo" style="display: none;">
+<form id="wishForm">
+ <input type="text" id="nombre" placeholder="Nombre" required />
+ <br />
+ <textarea id="mensaje" placeholder="Mensaje" required></textarea>
+ <br />
+ <button type="submit">Enviar deseo</button>
+</form>
+</div>
+<button id="verDeseosBtn">Ver buenos deseos</button>
+<div id="wishesContainer" style="margin-top: 20px;"></div>
+</div>
+
+<!-- Hashtag / QR -->
+<div class="section-filter">
+<lord-icon
+src="https://cdn.lordicon.com/wsaaegar.json"
+trigger="loop" delay="2000" stroke="light"
+colors="primary:#4b0082 ,secondary:#9438c5"
+style="width:200px;height:200px"></lord-icon>
+<h2>#MisQuinceValentina Polania</h2>
+<p>Sube las foto a Instagram utilizando mi hashtag, y poder convertir estas memorias en eternas.</p>
+<h3>Hagamos los recuerdos inolvidables</h3>
+<img src="/imagenes/QR.png" alt="Código QR" width="250">
+<p>Escanea el código QR o usa el botón para subir tus fotos</p>
+<button onclick="window.open('https://drive.google.com/drive/folders/1BQGWbFowD2ecijiQfsnj8uxip-EhiL_m?usp=sharing','_blank')">Subir fotos</button>
+</div>
+
+
+<!-- Confirmación -->
+<div class="section">
+<h3>Confirmar Asistencia</h3>
+<lord-icon
+src="https://cdn.lordicon.com/fjvfsqea.json"
+trigger="loop" delay="2000" stroke="light"
+colors="primary:#4b0082 ,secondary:#9438c5"
+style="width:200px;height:200px"></lord-icon>
+<p>Para nosotros es muy importante que confirmes tu asistencia antes del 10 de Noviembre, o bien indicarnos si no podrás acompañarnos.</p>
+<button onclick="confirmarAsistencia()">Confirmar</button>
+<div id="confirmacion"></div>
+</div>
+
+</div>
+    </section>
+
+
+                <!-- SECCIÓN VIDEO DIVISORIA -->
+                <section class="block block--video divider" loading="lazy">
+                    <video
+                 class="block-video"
+                 src="/imagenes/video-final.mp4"
+                 poster="/imagenes/video-final.png"
+                 autoplay
+                 muted
+                 loop
+                 playsinline
+                 preload="metadata"
+               ></video>
+             </section>
+
+        <!-- frase final-->
+        <!-- Frase final con imagen de fondo -->
+        <div class="section-quote bg-image"
+style="--quote-bg:url('/imagenes/siguiente.png')" loading="lazy">
+<h1>Hay momentos inolvidables que se atesoran en el corazón para siempre. Por esta razón quiero que compartas conmigo este día tan especial y seas parte de mi historia.</h1>
+</div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="section-social-icons ">
+                <a href="https://www.facebook.com/thetwodesign" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/thetwodesign/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/50236011737" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="section-logo">
+                <img src="/Imagenes/2.png" alt="Logo" width="100" loading="lazy">
+            </div>
+        </footer>
+    </div>
+    <script src="invitados.js"></script>
+    <script type="module" src="firebase.js"></script>
+    <script src="script.js" defer></script>
+    <audio id="magicSound" src="/sonidos/magia.mp3" preload="auto"></audio>
+    <div id="magicEffect"></div>
+</body>
+</html>
