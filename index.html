@@ -30,43 +30,40 @@
     <div id="invitacion">
         <!--Header-->
  <!-- PORTADA -->
- <!-- PORTADA -->
-<section id="portada" class="hero">
-  
-    <!-- Video de fondo -->
-    <video class="hero__video" 
-           src="/imagenes/video-portada.mp4" 
-           autoplay 
-           muted 
-           loop 
-           playsinline 
-           preload="metadata" 
-           poster="/imagenes/video-portada.png"
-           loading="lazy">
-    </video>
-    
-    <!-- Badge superior con el nombre del invitado -->
-    <div id="badgeInvitado" class="hero__badge" aria-live="polite"></div>
-  
-    <!-- Títulos sobre el video -->
-    <div class="hero__titles">
-      <h1 class="hero__h1">Mis Quince</h1>
-      <h2 class="hero__h2">Valentina Polania</h2>
-    </div>
-  
-    <!-- Estrellas decorativas -->
-    <div class="hero__stars" aria-hidden="true">
-      <img src="/imagenes/ESTRELLAS-D.png" alt="" class="star-img s1">
-      <img src="/imagenes/ESTRELLAS-I.png" alt="" class="star-img s2">
-      <img src="/imagenes/ESTRELLAS-D.png" alt="" class="star-img s3">
-      <img src="/imagenes/ESTRELLAS-I.png" alt="" class="star-img s4">
-      <img src="/imagenes/ESTRELLAS-D.png" alt="" class="star-img s5">
-    </div>
-  </section>
+        <section id="portada" class="hero">
+          <!-- Video de fondo -->
+          <video class="hero__video" src="/video/video-portada.mp4" autoplay muted loop playsinline preload="metadata" poster="/imagenes/video-portada.png" loading="lazy"></video>
+
+          <!-- Badge superior con el nombre del invitado -->
+          <div id="badgeInvitado" class="hero__badge" aria-live="polite"></div>
+
+          <!-- Títulos sobre el video -->
+          <div class="hero__stack">
+            <div class="hero__titles">
+              <h1 class="hero__h1">Mis Quince</h1>
+              <h2 class="hero__h2">Valentina Polania</h2>
+            </div>
+          
+            <!-- OJO: cambié a class="versiculo" (estaba "versisculo") -->
+            <div class="versiculo" role="note" aria-label="Versículo">
+              <p>"Este es el día que hizo el Señor; nos gozaremos y alegraremos en él."
+                — <cite>Salmo 118:24</cite></p>
+            </div>
+          </div>
+          
+
+          <!-- Estrellas decorativas (solo 4) -->
+          <div class="hero__stars" aria-hidden="true">
+            <img src="/imagenes/mariposas.png" alt="" class="star-img s1">
+            <img src="/imagenes/mariposas-volando.png" alt="" class="star-img s2">
+            <img src="/imagenes/mariposas.png" alt="" class="star-img s3">
+            <img src="/imagenes/mariposas-volando.png" alt="" class="star-img s4">
+          </div>
+        </section>
+
   
         <!-- SECCIÓN UNIFICADA CON FONDO -->
-        <section id="celebracion" class="block block--celebracion "
-        style="--bg-url:url('/imagenes/siguiente.png')" loading="lazy">
+        <section id="celebracion" class="block block--celebracion ">
 
         <!-- Contenido centrado -->
         <div class="block__content">
@@ -75,7 +72,7 @@
         <div class="section-countdown">
         <h1>¡Están invitados!</h1>
         <p>Nos encanta que sean parte de este momento tan especial para nosotros.</p>
-        <h2>29 . 11 . 2025</h2>
+        <h2>22 . 11 . 2025</h2>
 
         <div id="contador">
             <div class="countdown-circle">
@@ -97,7 +94,7 @@
         </div>
         <!-- Agregar al Calendario -->
         <div class="section-calendar">
-            <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M21lcThydG1xc29rcWpjZWFwZmFnazJodjAgY182OTRhZWE0ODlhN2FkZTJiYzRmYjRiNGExYTE2ZmY3ZDY2ZjAzNzFlMTgwY2I1MzZmM2M3YzE2NGUxZWMwOGIxQGc&tmsrc=c_694aea489a7ade2bc4fb4b4a1a16ff7d66f0371e180cb536f3c7c164e1ec08b1%40group.calendar.google.com"> Agregar al calendario</a>
+            <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M21lcThydG1xc22rcWpjZWFwZmFnazJodjAgY182OTRhZWE0ODlhN2FkZTJiYzRmYjRiNGExYTE2ZmY3ZDY2ZjAzNzFlMTgwY2I1MzZmM2M3YzE2NGUxZWMwOGIxQGc&tmsrc=c_694aea489a7ade2bc4fb4b4a1a16ff7d66f0371e180cb536f3c7c164e1ec08b1%40group.calendar.google.com"> Agregar al calendario</a>
         </div>
         </div>
 
@@ -113,30 +110,26 @@
             <!-- Bendición -->
             <div class="section-b">
                 <p>Con la bendición de Dios y de mis padres</p>
-                <h1>Angel Farfán</h1>
+                <h1>Joaquin Polania</h1>
                 <h2>&</h2>
-                <h1>Genoveva Lucas</h1>
+                <h1>Lorena Aguilar</h1>
             </div>
 
         </div>
         </section>
-        <!-- SECCIÓN VIDEO DIVISORIA -->
-        <section class="block block--video divider " loading="lazy">
-         <video
-      class="block-video"
-      src="/imagenes/video-foto1.mp4"
-      poster="/imagenes/video-foto1.png"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-    ></video>
-  </section>
   <!-- SECCIÓN UNIFICADA: Invitados + Itinerario + Regalos + Playlist -->
-        <section id="bloque-informacion" class="block block--fondo"
-        style="--bg-url:url('/imagenes/siguiente.png')" loading="lazy">
-        
+        <section id="bloque-informacion" class="block block--fondo" loading="lazy">
+          <!-- Video de fondo -->
+          <video
+          class="block__bgvideo"
+          src="/video/video-2.mp4"
+          poster="/imagenes/video-portada.png"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata">
+        </video>
         <div class="block__content">
             <!-- Invitados y Pases -->
             <div class="section section--intro">
@@ -151,18 +144,18 @@
 <div class="card event-card ceremony">
       <!-- Foto circular -->
   <div class="event-photo">
-    <img src="/imagenes/iglesia.png" alt="Ceremonia"/>
+    <img src="/imagenes/bosque.png" alt="Ceremonia"/>
   </div>
 
 <h2>Ceremonia</h2>
-<p>Iglesia Nuestra Señora de Guadalupe</p>
+<p>Colonia Los Pinos</p>
 <div class="details">
  <div class="time-location">
-   <span class="date">29 Noviembre</span>
+   <span class="date">22 Noviembre</span>
    <span class="separator">|</span>
-   <span class="time">16:45 hrs</span>
+   <span class="time">6:00 pm a 6:45 pm</span>
  </div>
- <p>19 Calle, Zona 10, Ciudad de Guatemala</p>
+ <p>23 avenida 10-15 lote 22. Los pinos zona 7 de Mixco.</p>
  <button type="button" class="direction-button" onclick="elegirAplicacion()">Cómo llegar</button>
 </div>
 </div>
@@ -171,17 +164,17 @@
 <div class="card event-card party">
           <!-- Foto circular -->
   <div class="event-photo">
-    <img src="/imagenes/hotel.png" alt="Hotel"/>
+    <img src="/imagenes/bosque.png" alt="Hotel"/>
   </div>
 <h2>Recepción</h2>
-<p>Salón los Reyes, Hotel Barceló</p>
+<p>Colonia Los Pinos</p>
 <div class="details">
  <div class="time-location">
-   <span class="date">29 Noviembre</span>
+   <span class="date">22 Noviembre</span>
    <span class="separator">|</span>
-   <span class="time">19:00 hrs</span>
+   <span class="time">7:00 pm a 11:00 pm</span>
  </div>
- <p>7 avenida 15-45, Zona 9, Ciudad de Guatemala</p>
+ <p>23 avenida 10-15 lote 22. Los pinos zona 7 de Mixco.</p>
  <button type="button" class="direction-button" onclick="elegirAplicacionOtraDireccion()">Cómo llegar</button>
 </div>
 </div>
@@ -194,7 +187,7 @@ src="https://cdn.lordicon.com/kezeezyg.json"
 trigger="loop"
 delay="2000"
 stroke="light"
-colors="primary:#4b0082 ,secondary:#9438c5"
+colors="primary:#b8860b ,secondary:#fff8dc"
 style="width:200px;height:200px">
 </lord-icon>
 <h2>Lluvia de Sobres</h2>
@@ -204,23 +197,9 @@ style="width:200px;height:200px">
 
 </div>
         </section>
-                <!-- SECCIÓN VIDEO DIVISORIA -->
-                <section class="block block--video divider" loading="lazy">
-                    <video
-                 class="block-video"
-                 src="/imagenes/video-foto2.mp4"
-                 poster="/imagenes/video-foto2.png"
-                 autoplay
-                 muted
-                 loop
-                 playsinline
-                 preload="metadata"
-               ></video>
-             </section>
-
              <!-- SECCIÓN UNIFICADA FINAL (fondo único) -->
     <section id="bloque-final" class="block block--fondo-final"
-style="--bg-url:url('/imagenes/siguiente.png')" loading="lazy">
+
 
 <div class="block__content">
 
@@ -230,9 +209,9 @@ style="--bg-url:url('/imagenes/siguiente.png')" loading="lazy">
 <lord-icon
 src="https://cdn.lordicon.com/okgbpdra.json"
 trigger="loop" delay="2000" stroke="light"
-colors="primary:#4b0082 ,secondary:#9438c5"
+colors="primary:#b8860b ,secondary:#fff8dc"
 style="width:200px;height:200px"></lord-icon>
-<p>De gala colores negro o azul oscuro. Acompáñanos con elegancia en esta celebración inolvidable</p>
+<p>Elegante Casual. Vestido Largo y colores Verde y Rosa reservado para la quinceanera</p>
 </div>
 
 
@@ -258,13 +237,11 @@ style="width:200px;height:200px"></lord-icon>
 <lord-icon
 src="https://cdn.lordicon.com/wsaaegar.json"
 trigger="loop" delay="2000" stroke="light"
-colors="primary:#4b0082 ,secondary:#9438c5"
+colors="primary:#b8860b ,secondary:#fff8dc"
 style="width:200px;height:200px"></lord-icon>
-<h2>#MisQuinceValentina Polania</h2>
+<h2>#MisQuinceValentina</h2>
 <p>Sube las foto a Instagram utilizando mi hashtag, y poder convertir estas memorias en eternas.</p>
 <h3>Hagamos los recuerdos inolvidables</h3>
-<img src="/imagenes/QR.png" alt="Código QR" width="250">
-<p>Escanea el código QR o usa el botón para subir tus fotos</p>
 <button onclick="window.open('https://drive.google.com/drive/folders/1BQGWbFowD2ecijiQfsnj8uxip-EhiL_m?usp=sharing','_blank')">Subir fotos</button>
 </div>
 
@@ -275,7 +252,7 @@ style="width:200px;height:200px"></lord-icon>
 <lord-icon
 src="https://cdn.lordicon.com/fjvfsqea.json"
 trigger="loop" delay="2000" stroke="light"
-colors="primary:#4b0082 ,secondary:#9438c5"
+colors="primary:#b8860b ,secondary:#fff8dc"
 style="width:200px;height:200px"></lord-icon>
 <p>Para nosotros es muy importante que confirmes tu asistencia antes del 10 de Noviembre, o bien indicarnos si no podrás acompañarnos.</p>
 <button onclick="confirmarAsistencia()">Confirmar</button>
@@ -285,27 +262,28 @@ style="width:200px;height:200px"></lord-icon>
 </div>
     </section>
 
-
-                <!-- SECCIÓN VIDEO DIVISORIA -->
-                <section class="block block--video divider" loading="lazy">
-                    <video
-                 class="block-video"
-                 src="/imagenes/video-final.mp4"
-                 poster="/imagenes/video-final.png"
-                 autoplay
-                 muted
-                 loop
-                 playsinline
-                 preload="metadata"
-               ></video>
-             </section>
-
         <!-- frase final-->
-        <!-- Frase final con imagen de fondo -->
-        <div class="section-quote bg-image"
-style="--quote-bg:url('/imagenes/siguiente.png')" loading="lazy">
-<h1>Hay momentos inolvidables que se atesoran en el corazón para siempre. Por esta razón quiero que compartas conmigo este día tan especial y seas parte de mi historia.</h1>
-</div>
+        <div class="section-quote section-quote--video" loading="lazy">
+          <!-- Video de fondo -->
+          <video
+            class="quote__bgvideo"
+            src="/video/video-2.mp4"
+            poster="/imagenes/video-portada.png"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata">
+          </video>
+        
+          <h1>
+            "El Señor te bendiga y te guarde;
+            el Señor haga resplandecer su rostro sobre ti
+            y tenga de ti misericordia."
+            — Números 6:24-25
+          </h1>
+        </div>
+        
 
         <!-- Footer -->
         <footer>

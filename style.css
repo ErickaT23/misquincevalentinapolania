@@ -1,5 +1,5 @@
 :root {
-    --color-1:	#9438c5;
+    --color-1:	#b8860b;
     --color-2: 	#efe3fc;
     --color-3:#003366;
     --color-4:#F5F5F5;
@@ -17,7 +17,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     text-align: center;
-    background-color: white;
+    background-color: #909655;
     font-family: 'cormorant garamond';
     font-style: italic;
 }
@@ -80,7 +80,7 @@ body {
     font-style: italic;
     z-index: 12; /* Texto encima de todo */
     position: relative;
-    font-size: 30px;
+    font-size: 26px;
     background: linear-gradient( to right,  #ffffff,  /* blanco puro */ #f2f2f2,  /* gris muy claro */#e6e6e6   /* gris suave */);
     -webkit-background-clip: text;
     color: transparent;
@@ -102,124 +102,130 @@ body {
   place-items: center;
   overflow: hidden;
   isolation: isolate;
-  background: var(--color-4); /* color de fallback */
 }
 
 /* eliminamos el ::before con imagen */
-.hero::before {
-  content: none;
-}
+.hero::before { content: none; }
 
 /* video de fondo */
 .hero__video {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* usa cover si quieres llenar todo */
   z-index: -2;
-  filter: brightness(1.1); /* aclara un poco el video */
+  filter: brightness(1.1);
+  margin-top: -10px;
+  margin-bottom: 0;
 }
-
-
-/* mantenemos tu badge, títulos y estrellas como están */
+/* Z-index base para el resto del contenido */
 .hero__badge,
 .hero__titles,
 .hero__stars {
   position: relative;
-  z-index: 1; /* sobre el video */
+  z-index: 1;
 }
 
-  /* Títulos */
-  .hero__titles{
-    text-align: center;
-    animation: fadeIn var(--scroll-animation-duration) ease-in forwards;
-    margin-top: 500px;
-  }
-  .hero__h1, .hero__h2{
-    margin: 0;
-    line-height: 1.05;
-    letter-spacing: .3px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,.35);
-  }
-  
-  /* Dorado en los títulos (reutiliza tu gradiente) */
-  .hero__h1, .hero__h2{
-    font-family: var(--font-title);
-    font-weight: 400;
-    font-style: italic;
-    background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
--webkit-background-clip: text;
-color: transparent;
-animation: shine 1.5s infinite linear;
 
-  }
-  
-.hero__h1{
-        font-size: 60px;
-        padding: 15px;
-        margin-top: 200px;
-    }
-.hero__h2{
-        font-size: 55px;
-        padding: 15px;
-        margin-top: -20px;
-    }
-  
-  /* ====== Estrellas (imágenes) ====== */
-  .hero__stars{
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
-  
-  .star-img{
-    position: absolute;
-    width: 40px; height: 40px;
-    opacity: .9;
-    animation: twinkle 3.8s ease-in-out infinite;
-    filter: drop-shadow(0 0 6px rgba(212,175,55,.75));
-  }
-  
-  /* Posiciones predefinidas (podés ajustar) */
-  .star-img.s1{ top: 18%; left: 12%; animation-delay: .2s; transform: rotate(12deg); }
-  .star-img.s2{ top: 28%; right: 14%; animation-delay: .9s; transform: rotate(-8deg); }
-  .star-img.s3{ bottom: 22%; left: 20%; animation-delay: 1.6s; transform: rotate(5deg); }
-  .star-img.s4{ bottom: 15%; right: 18%; animation-delay: .5s; transform: rotate(-12deg); }
-  .star-img.s5{ top: 8%; left: 70%; animation-delay: 1.2s; transform: rotate(7deg); }
-  
-  /* Si querés estrellas más pequeñas en mobile */
-  @media (max-width: 480px){
-    .star-img{ width: 32px; height: 32px; }
-    .hero__badge{ 
-        font-size: 30px;
-        margin-top: 20px;
-        background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
-        -webkit-background-clip: text;
-        color: transparent;
-        animation: shine 1.5s infinite linear;
-    }
-  }
+/* Títulos */
+.hero__titles { text-align: center; animation: fadeIn var(--scroll-animation-duration) ease-in forwards; }
+.hero__h1, .hero__h2, .hero__badge {
+  margin: 0;
+  line-height: 1.05;
+  letter-spacing: .3px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,.35);
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-style: italic;
+  background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 1.5s infinite linear;
+}
+/* Contenedor vertical para títulos + versículo */
+.hero__stack{
+  position: relative;
+  z-index: 1;             /* sobre el video */
+  display: grid;
+  justify-items: center;  /* centra horizontal */
+  row-gap: 10px;          /* espacio entre títulos y versículo */
+  text-align: center;     /* asegura centrado del texto */
+  padding-inline: 16px;   /* respiración lateral en móvil */
+  margin-top: 0;
+  margin-top: -300px;
+}
+.hero__badge{
+  padding: 15px;
+  font-size: 20px;
+}
+/* Ya tienes estilos de .hero__titles y .hero__h1/.hero__h2 dorados */
+
+/* Versículo */
+.versiculo p{
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.35;
+  font-style: normal;
+  background: linear-gradient(to right, #b8860b,#ffd700,#fff8dc,#ffd700,#b8860b);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 2s linear infinite;
+}
+
+/* opcional: resalte “Salmo 118:24” en dorado */
+.versiculo cite{
+  font-style: normal;
+  background: linear-gradient(to right, #b8860b,#ffd700,#fff8dc,#ffd700,#b8860b);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 2s linear infinite;
+}
+
+/* Si quieres un poquito más de separación en desktop */
+@media (min-width: 768px){
+  .hero__stack{ row-gap: 14px; }
+}
+
+/* Si el usuario prefiere menos animación */
+@media (prefers-reduced-motion: reduce){
+  .versiculo cite{ animation: none; }
+}
+
+.hero__h1 { font-size: 60px; padding: 15px; }
+.hero__h2 { font-size: 55px; padding: 15px; margin-top: -20px; }
+
+/* ===== Estrellas (imágenes) ===== */
+.hero__stars { position: absolute; inset: 0; pointer-events: none; }
+.star-img {
+  position: absolute;
+  width: 40px; height: 40px;
+  opacity: .9;
+  animation: twinkle 3.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(212,175,55,.75));
+}
+/* Solo 4 posiciones (quitamos .s5) */
+.star-img.s1{ top: 18%; left: 12%; animation-delay: .2s; transform: rotate(12deg); }
+.star-img.s2{ top: 28%; right: 14%; animation-delay: .9s; transform: rotate(-8deg); }
+.star-img.s3{ bottom: 22%; left: 20%; animation-delay: 1.6s; transform: rotate(5deg); }
+.star-img.s4{ bottom: 15%; right: 18%; animation-delay: .5s; transform: rotate(-12deg); }
+
+@media (max-width: 480px){
+  .star-img{ width: 32px; height: 32px; }
+}
+
 /* ===== Sección unificada con fondo ===== */
 .block--celebracion{
-    position: relative;
     width: 100%;
     min-height: 100vh;               /* pantalla completa */
     display: grid;
     place-items: center;
     isolation: isolate;               /* controlar capas */
     overflow: hidden;
-  }
-  /* Imagen de fondo */
-  .block--celebracion::before{
-    content:"";
-    position:absolute; inset:0;
-    background-image: var(--bg-url);
-    background-size: cover;
-    background-position: center;
-    z-index: -2;
-    filter: saturate(1.05);
+    margin-top: 30px;
   }
   /* Contenedor interno para no estirar demasiado en desktop */
   .block--celebracion .block__content{
@@ -237,7 +243,7 @@ animation: shine 1.5s infinite linear;
   }
   /* Transparencias suaves para las tarjetas circulares y el botón */
   .block--celebracion .countdown-circle{
-    background: rgba(255,255,255,0.6);
+    background:rgb(179 110 155 / 21%);
   }
   .block--celebracion .section-calendar{
     background-color: rgba(255,255,255,0.6);
@@ -273,24 +279,9 @@ animation: shine 1.5s infinite linear;
     justify-content: center;
     align-items: center;
   }
-  .section-countdown::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(/imagenes/fondo-estrellas.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.6; /* Aquí controlás cuánta opacidad querés */
-    z-index: -1; /* Pone la imagen detrás del contenido */
-  }
-
 /*dorado*/
 .section-countdown h1, p, .countdown-circle span, .section-music h2, .section-quote h1{
-    background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
@@ -313,7 +304,7 @@ animation: shine 1.5s infinite linear;
     padding: 7px;
 }
 .section-countdown h2 {
-    background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
@@ -334,9 +325,8 @@ animation: shine 1.5s infinite linear;
     padding: 0;
 }
 .countdown-circle {
-    width: 75px;
-    height: 75px;
-    background:#ffffff91;
+    width: 73px;
+    height: 73px;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -370,7 +360,7 @@ animation: shine 1.5s infinite linear;
     font-size: 1.2em;
 }
 .section-calendar:hover {
-    background-    background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+    background-     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
@@ -400,10 +390,6 @@ animation: shine 1.5s infinite linear;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(/imagenes/fondo-estrellas.png); /* Cambiá por la ruta que necesites */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     opacity: 0.5;
     z-index: -1; /* Coloca el fondo detrás del contenido */
   }
@@ -413,12 +399,49 @@ animation: shine 1.5s infinite linear;
     font-weight: 400;
     font-style: italic;
 }
+
+.block--fondo{
+  position: relative;
+  overflow: hidden;
+  /* Fallback estático si algo falla (o si desactiva el video abajo) */
+  background: var(--color-4);
+  background-image: var(--bg-url, none);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Video de fondo a pantalla completa del section */
+.block__bgvideo{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* use contain si prefiere ver todo el cuadro */
+  z-index: -1;        /* detrás del contenido */
+  filter: brightness(0.95); /* opcional */
+}
+
+/* Asegura el contenido por encima del video */
+.block__content{
+  position: relative;
+  z-index: 1;
+}
+
+/* Respeto a usuarios con menos animación: oculto video y muestro fondo */
+@media (prefers-reduced-motion: reduce){
+  .block__bgvideo{ display: none; }
+  .block--fondo{
+    /* Use el mismo poster como fondo si quiere */
+    --bg-url: url('/imagenes/siguiente.png');
+  }
+}
+
 #nombreInvitado.fondo-nombre {
     padding: 10px;
     margin-bottom: 0;
     width: 100%;
     height: auto;
-    background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
@@ -429,7 +452,7 @@ animation: shine 1.5s infinite linear;
     margin-top: 0;
     width: 100%;
     height: auto;
-    background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
@@ -515,7 +538,7 @@ animation: shine 1.5s infinite linear;
   .event-card .time-location{ display: flex; align-items: center; gap: 8px; justify-content: center; }
   
   .direction-button{
-    background-color: #9061a9;
+    background-color: var(--color-1);
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -553,31 +576,26 @@ animation: shine 1.5s infinite linear;
   }
   
   /* ===== Bloque unificado final con fondo ===== */
+
+  
+  /* Overlay suave para legibilidad (opcional) */
+/* Bloque final con fondo responsivo sin distorsión */
 .block--fondo-final{
-    position: relative;
-    width: 100%;
-    min-height: 100vh;    
-    isolation: isolate;
-    overflow: hidden;
-  }
-  .block--fondo-final::before{
-    content:"";
-    position:absolute; inset:0;
-    background-image: var(--bg-url);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -2;
-    filter: saturate(1.05);
-  }
-  .block--fondo-final .block__content{
-    width: min(1100px, 95vw);
-    margin: 0 auto;
-    display: grid;
-    gap: 22px;
-    position: relative; /* sobre el velo */
-    z-index: 1;
-  }
+  width: 100%;
+  /* si quieres pantalla completa al menos, déjalo; si no, quítalo */
+  /* min-height: 100vh;  */
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+/* Contenido por encima y ancho contenido controlado */
+.block--fondo-final .block__content{
+  z-index: 1;
+  width: min(980px, 95vw);
+  display: grid;
+}
+
   /* Neutralizar overlays internos para que se vea el fondo único */
   #bloque-final .section::before,
   #bloque-final .section-wishes::before,
@@ -586,29 +604,17 @@ animation: shine 1.5s infinite linear;
     background: none !important;
   }
   
-  /* Mejorar legibilidad en tarjetas con fondo translúcido (opcional) */
-  #bloque-final .section,
-  #bloque-final .section-wishes,
-  #bloque-final .section-filter{
-    border-radius: 14px;
-    backdrop-filter: blur(2px);
-  }
-  
   /* La galería mantiene su estilo existente */
   #bloque-final .galeria img{
     border-radius: 10px;
   }
-  
-  /* Responsivo */
-  @media (min-width: 768px){
-    .block--fondo-final .block__content{ gap: 26px; }
-  }
+
   
 /*section blessed*/
 .section-b {
     position: relative;
     width: 100%;
-    height: 370px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -617,27 +623,13 @@ animation: shine 1.5s infinite linear;
     margin-bottom: 0;
     z-index: 0; /* Asegura que el contenido esté sobre el fondo */
   }
-  .section-b::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(/imagenes/fondo-estrellas.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.5; /* Controla la opacidad del fondo */
-    z-index: -1; /* Coloca la imagen detrás del contenido */
-  }  
 .section-b p{
     font-family: var(--font-text);
     font-style: italic;
     font-weight: 400;
-    font-size: 28px;
+   font-size: 25px;
     margin-top: -60px;
-        background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+         background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
@@ -647,10 +639,10 @@ animation: shine 1.5s infinite linear;
     padding: 15px;
     font-weight: 400;
     font-style: italic;
-    font-size: 50px;
+    font-size: 40px;
     margin-top: -10px;
     margin-bottom: -10px;
-    background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
@@ -698,20 +690,6 @@ animation: shine 1.5s infinite linear;
     z-index: 0;
     overflow: hidden;
   }
-  .section-gifts::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(/imagenes/fondo-estrellas.png); /* Ruta de tu imagen */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.5;
-    z-index: -1;
-  }
 .section h1{
     font-family: var(--font-text);
     padding: 15px;
@@ -720,7 +698,7 @@ animation: shine 1.5s infinite linear;
     font-size: 40px;
     margin-top: -10px;
     margin-bottom: -10px;
-    background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
@@ -735,44 +713,18 @@ animation: shine 1.5s infinite linear;
   overflow: hidden;
   margin-bottom: 20px;
 }
-/* Imagen de fondo con opacidad */
-.section-wishes::before,
-.section-playlist::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(/imagenes/fondo-estrellas.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.4; /* Podés ajustar entre 0.3 y 0.6 según qué tan sutil lo querés */
-  z-index: -1;
-}
 .section-playlist p {
     font-family: var(--font-text);
     font-style: italic;
     font-weight: 400;
-    font-size: 28px;
-        background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+   font-size: 25px;
+         background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
-.section-main {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    transform: translateY(20px);
-    animation: fadeIn var(--scroll-animation-duration) ease-in forwards;
-}
-.section-main img {
-    width: 100%;
-    height: auto;
-}
+
 .section-quote h1 {
     font-family: var(--font-title);
     font-weight: 400;
@@ -793,7 +745,7 @@ animation: shine 1.5s infinite linear;
     font-size: 40px;
     margin-top: 20px;
     margin-bottom: 10px;
-        background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+         background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
@@ -804,10 +756,10 @@ animation: shine 1.5s infinite linear;
     font-family: var(--font-text);
     font-style: italic;
     font-weight: 400;
-    font-size: 28px;
+   font-size: 25px;
     padding: 5px;
     margin: 0;
-        background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+         background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
@@ -817,8 +769,8 @@ animation: shine 1.5s infinite linear;
     font-family: var(--font-text);
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
-        background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+    font-size: 20px;
+         background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
@@ -835,35 +787,6 @@ animation: shine 1.5s infinite linear;
     margin-top: -20px;
     margin-bottom: -20px;
 }/*section div4*/
-/*galeria*/
-/* ===== Galería tipo grid 2xN (móvil) con tarjetas cuadradas ===== */
-.galeria{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);   /* 2 columnas como en tu captura */
-    gap: 12px;                                /* separación entre tarjetas */
-    padding: 12px;                            /* respiro interior */
-  }
-  
-  /* Cada imagen se comporta como tarjeta cuadrada */
-  .galeria img{
-    width: 100%;
-    aspect-ratio: 1 / 1;                      /* SIEMPRE cuadrado */
-    object-fit: cover;                         /* recorte elegante */
-    border-radius: 14px;                       /* esquinas redondeadas */
-    box-shadow: 0 10px 24px rgba(0,0,0,.10);   /* sombra suave */
-    display: block;                            /* elimina espacios fantasmas */
-    background: #fff;                          /* fondo por si tarda en cargar */
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-  
-  /* Efecto hover (en desktop) */
-  @media (hover:hover){
-    .galeria img:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(0,0,0,.12);
-    }
-  }
-  
   /* Títulos de la sección "Galería" más separados del grid */
   .section h2 + .galeria{ margin-top: 8px; }
   
@@ -871,58 +794,8 @@ animation: shine 1.5s infinite linear;
   @media (min-width: 768px){
     .galeria{ grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 14px; }
   }
-  @media (min-width: 1024px){
-    /* si prefieres 4 columnas, cambia el 3 por 4 */
-    .galeria{ grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 16px; }
-  }
-  
-.galeria img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-.galeria img:hover {
-    transform: scale(1.1);
-}
-.photo-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-}
-.photo-modal img {
-    max-width: 80%;
-    max-height: 80%;
-    margin: auto;
-    display: block;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-}
-.close {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}/*botones*/
 button {
-    background-color:#9061a9;
+    background-color:var(--color-1);
     color: #fff;
     border-radius: 5px;
     font-family: var(--font-text);
@@ -942,7 +815,7 @@ button:hover {
 /*footer*/
 footer {
     padding: 20px;
-    background:#b9a6ce;
+    background:#445c31;
     color: white;
     font-size: var(--footer-font-size);
     width: 100%;
@@ -970,7 +843,7 @@ footer {
   .section-wishes h2 {
     font-family: var(--font-title);
     font-size: 50px;
-        background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+         background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
@@ -1003,7 +876,7 @@ footer {
     margin-top: 20px;
   }
   .wish-card {
-    background-color:white;
+    background-color:rgb(179 110 155 / 21%);
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     margin-bottom: 10px;
@@ -1015,7 +888,7 @@ footer {
     display: block;
     font-family: var(--font-title);
     font-size: 1.2em;
-    background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
@@ -1024,7 +897,7 @@ footer {
   .wish-card em {
     font-family: var(--font-text);
     font-style: italic;
-        background: linear-gradient( to right,#4b0082,  /* índigo oscuro */#6a0dad,  /* morado fuerte */ #2e0854   /* púrpura profundo */);
+         background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
     -webkit-background-clip: text;
     color: transparent;
     animation: shine 1.5s infinite linear;
@@ -1095,44 +968,12 @@ footer {
     z-index: 0;
     overflow: hidden;
   }
-  
-  /* Imagen de fondo con opacidad */
-  .section-filter::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(/imagenes/fondo-estrellas.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.4; /* Ajustable según el efecto deseado */
-    z-index: -1;
-  }
   .section-quote {
     position: relative;
     background-color: transparent; /* Color base translúcido */
     width: 100%;
     z-index: 0;
     overflow: hidden;
-  }
-  
-  /* Imagen de fondo con opacidad */
-  .section-quote::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(/imagenes/fondo-estrellas.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.4; /* Ajustalo según cómo querés que luzca */
-    z-index: -1;
   }
   
 /* Media Queries */
@@ -1272,4 +1113,63 @@ footer {
     .section-quote.bg-image{ min-height: 56vh; padding: 36px 24px; }
   }
   
-
+  .section-quote{
+    position: relative;
+    width: 100%;
+    min-height: 65vh;          /* ajusta al alto que quieras */
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    text-align: center;
+  }
+  
+  .quote__bgvideo{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* sin distorsión, puede recortar */
+    z-index: -1;               /* detrás del texto */
+  }
+  
+  /* Overlay sutil por encima del video (opcional) */
+  .section-quote::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,.15), rgba(0,0,0,.35));
+  }
+  
+  /* Texto de la cita */
+  .section-quote h1{
+    margin: 0;
+    max-width: 980px;
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.35;
+    font-size: 23px;
+    text-shadow: 0 3px 12px rgba(0,0,0,.45);
+  }
+  
+  /* Si quieres resaltar la referencia en dorado */
+  .section-quote h1::after{
+    content: "";
+    display: block;
+    width: 120px;
+    height: 2px;
+    margin: 14px auto 0;
+    background: linear-gradient(to right, #b8860b, #ffd700, #b8860b);
+    opacity: .9;
+  }
+  
+  /* Respeto por usuarios con menos animaciones */
+  @media (prefers-reduced-motion: reduce){
+    .quote__bgvideo{ display: none; }
+    .section-quote{
+      background: center/cover no-repeat url('/imagenes/siguiente.png');
+    }
+  }
+  

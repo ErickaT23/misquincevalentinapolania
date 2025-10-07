@@ -153,7 +153,7 @@ function confirmarAsistencia() {
 
   if (!invitado) { alert("Invitado no encontrado."); return; }
 
-  const baseURL     = "https://docs.google.com/forms/d/e/1FAIpQLSedwNzh7uiU7zTThM3COblNHu86Kj0HVD1Jw44gd3vcH5kGHg/viewform?usp=pp_url";
+  const baseURL     = "https://docs.google.com/forms/d/e/1FAIpQLScYZRNk3ONFTNL1cq7X_fEhXA03K57jjq4HcQdkhM_KT37oVg/viewform?usp=pp_url";
   const nombreField = "entry.1297710131";
   const pasesField  = "entry.1099367965";
 
@@ -163,10 +163,10 @@ function confirmarAsistencia() {
 
 /* ---------- Mapas ---------- */
 function elegirAplicacion() {
-  window.open('https://maps.app.goo.gl/RyBzj2xNxDKWdJaE9', '_blank');
+  window.open('https://maps.app.goo.gl/R6sdme5KopCdv4yaA', '_blank');
 }
 function elegirAplicacionOtraDireccion() {
-  window.open('https://maps.app.goo.gl/9F42xmijRvivmaGA7', '_blank');
+  window.open('https://maps.app.goo.gl/R6sdme5KopCdv4yaA', '_blank');
 }
 
 /* ---------- Buenos deseos (Firebase) ---------- */

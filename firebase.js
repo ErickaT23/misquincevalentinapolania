@@ -3,14 +3,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebas
 import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js";
 
 // Configuración de Firebase
-
 const firebaseConfig = {
-  apiKey: "AIzaSyD6cU9oQGi1DMSRHOMltxLUwuBCnwOfAbE",
-  authDomain: "misquincevaleriafarfanlucas.firebaseapp.com",
-  projectId: "misquincevaleriafarfanlucas",
-  storageBucket: "misquincevaleriafarfanlucas.firebasestorage.app",
-  messagingSenderId: "261208425003",
-  appId: "1:261208425003:web:6eecd3793af88acb9c606e"
+  apiKey: "AIzaSyAlTpiJofRGk5a-bT99K2bAcvO7fumNS34",
+  authDomain: "misquincevalentina-d348e.firebaseapp.com",
+  projectId: "misquincevalentina-d348e",
+  storageBucket: "misquincevalentina-d348e.firebasestorage.app",
+  messagingSenderId: "849619986001",
+  appId: "1:849619986001:web:5bd61ee9b15f4cfec63a70"
 };
 
 // Inicializar Firebase y Realtime Database
