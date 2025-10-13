@@ -1,5 +1,5 @@
 :root {
-    --color-1:	#b8860b;
+    --color-1:	#445c31;
     --color-2: 	#efe3fc;
     --color-3:#003366;
     --color-4:#F5F5F5;
@@ -62,7 +62,7 @@ body {
     transform: translate(-50%, -50%);
     width: 145px;
     height: 145px;
-    background-color: rgb(150, 132, 27);
+    background-color: var(--color-1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.216);
     border-radius: 50%;
     display: flex;
@@ -138,10 +138,7 @@ body {
   font-family: var(--font-title);
   font-weight: 400;
   font-style: italic;
-  background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: shine 1.5s infinite linear;
+  color: white;
 }
 /* Contenedor vertical para títulos + versículo */
 .hero__stack{
@@ -170,29 +167,13 @@ body {
   font-style: italic;
   line-height: 1.35;
   font-style: normal;
-  background: linear-gradient(to right, #b8860b,#ffd700,#fff8dc,#ffd700,#b8860b);
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: shine 2s linear infinite;
+  color: white;
 }
 
 /* opcional: resalte “Salmo 118:24” en dorado */
 .versiculo cite{
   font-style: normal;
-  background: linear-gradient(to right, #b8860b,#ffd700,#fff8dc,#ffd700,#b8860b);
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: shine 2s linear infinite;
-}
-
-/* Si quieres un poquito más de separación en desktop */
-@media (min-width: 768px){
-  .hero__stack{ row-gap: 14px; }
-}
-
-/* Si el usuario prefiere menos animación */
-@media (prefers-reduced-motion: reduce){
-  .versiculo cite{ animation: none; }
+  color: white;
 }
 
 .hero__h1 { font-size: 60px; padding: 15px; }
@@ -216,46 +197,35 @@ body {
 @media (max-width: 480px){
   .star-img{ width: 32px; height: 32px; }
 }
+.divider-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+  margin-top: -157px; /* Ajusta según el diseño */
+}
+
+.divider-image img {
+  max-width: 500px; /* o lo que desees */
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
 
 /* ===== Sección unificada con fondo ===== */
-.block--celebracion{
-    width: 100%;
-    min-height: 100vh;               /* pantalla completa */
-    display: grid;
-    place-items: center;
-    isolation: isolate;               /* controlar capas */
-    overflow: hidden;
-    margin-top: 30px;
-  }
-  /* Contenedor interno para no estirar demasiado en desktop */
-  .block--celebracion .block__content{
-    width: min(980px, 95vw);
-    display: grid;
-    gap: 20px;
-  }
-  /* Como estas sub-secciones ya tenían fondos/overlays en tu CSS,
-     los neutralizamos aquí para que se vea el fondo unificado */
-  .block--celebracion .section-countdown::before,
-  .block--celebracion .section-music::before,
-  .block--celebracion .section-b::before{
-    content: none !important;
-    background: none !important;
-  }
-  /* Transparencias suaves para las tarjetas circulares y el botón */
-  .block--celebracion .countdown-circle{
-    background:rgb(179 110 155 / 21%);
-  }
-  .block--celebracion .section-calendar{
-    background-color: rgba(255,255,255,0.6);
-    border: 1px solid rgba(255,255,255,0.35);
-  }
-  
-  /* Ajustes responsivos de espaciado */
-  @media (min-width: 768px){
-    .block--celebracion .block__content{
-      gap: 28px;
-    }
-  }
+.block--celebracion {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  background-image: url('/imagenes/f1.png'); /* Cambia esta ruta */
+  background-size: cover;        /* Para que la imagen cubra todo el fondo */
+  background-position: center;   /* Centrada */
+  background-repeat: no-repeat;  /* Sin repetir */
+}
   
 /*secciones generales*/
 .section , .section-playlist, .section-filter, .section-quote{
@@ -281,10 +251,7 @@ body {
   }
 /*dorado*/
 .section-countdown h1, p, .countdown-circle span, .section-music h2, .section-quote h1{
-     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+color: white;
 }
 .section-countdown h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
@@ -304,10 +271,7 @@ body {
     padding: 7px;
 }
 .section-countdown h2 {
-     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     font-family: var(--font-text);
@@ -360,10 +324,7 @@ body {
     font-size: 1.2em;
 }
 .section-calendar:hover {
-    background-     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+    background-color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 .section-calendar a:hover {
@@ -409,7 +370,6 @@ body {
   background-size: cover;
   background-position: center;
 }
-
 /* Video de fondo a pantalla completa del section */
 .block__bgvideo{
   position: absolute;
@@ -420,31 +380,18 @@ body {
   z-index: -1;        /* detrás del contenido */
   filter: brightness(0.95); /* opcional */
 }
-
 /* Asegura el contenido por encima del video */
 .block__content{
   position: relative;
   z-index: 1;
+  margin-top: -50px
 }
-
-/* Respeto a usuarios con menos animación: oculto video y muestro fondo */
-@media (prefers-reduced-motion: reduce){
-  .block__bgvideo{ display: none; }
-  .block--fondo{
-    /* Use el mismo poster como fondo si quiere */
-    --bg-url: url('/imagenes/siguiente.png');
-  }
-}
-
 #nombreInvitado.fondo-nombre {
     padding: 10px;
     margin-bottom: 0;
     width: 100%;
     height: auto;
-     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+color: white;
 }
 #cantidadPases.fondo-pases {
     padding: 10px;
@@ -452,10 +399,7 @@ body {
     margin-top: 0;
     width: 100%;
     height: auto;
-     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+color: white;
 }
 .block--video{
     position: relative;
@@ -464,7 +408,6 @@ body {
     overflow: hidden;
     isolation: isolate;
   }
-  
   .block--video .block-video {
     position: absolute;
     inset: 0;
@@ -473,8 +416,7 @@ body {
     object-fit: cover;
     
 }
-  
-  /* Respeto a usuarios con reducción de movimiento */
+  /* Reeto a usuarios con reducción de movimiento */
   @media (prefers-reduced-motion: reduce){
     .block--video .block-video{ display: none; }
     .block--video{ 
@@ -582,12 +524,14 @@ body {
 /* Bloque final con fondo responsivo sin distorsión */
 .block--fondo-final{
   width: 100%;
-  /* si quieres pantalla completa al menos, déjalo; si no, quítalo */
-  /* min-height: 100vh;  */
   display: grid;
   place-items: center;
   isolation: isolate;
   overflow: hidden;
+  background-image: url('/imagenes/f2.svg'); /* Cambia esta ruta */
+  background-size: cover;        /* Para que la imagen cubra todo el fondo */
+  background-position: center;   /* Centrada */
+  background-repeat: no-repeat;  /* Sin repetir */
 }
 /* Contenido por encima y ancho contenido controlado */
 .block--fondo-final .block__content{
@@ -629,10 +573,7 @@ body {
     font-weight: 400;
    font-size: 25px;
     margin-top: -60px;
-         background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+    color: white;
 }
 .section-b h1, .section-b h2, .section-b h3{
     font-family: var(--font-title);
@@ -642,10 +583,7 @@ body {
     font-size: 40px;
     margin-top: -10px;
     margin-bottom: -10px;
-     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -698,10 +636,7 @@ body {
     font-size: 40px;
     margin-top: -10px;
     margin-bottom: -10px;
-     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 /*secciones otros colores*/
@@ -718,10 +653,7 @@ body {
     font-style: italic;
     font-weight: 400;
    font-size: 25px;
-         background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+    color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -745,10 +677,7 @@ body {
     font-size: 40px;
     margin-top: 20px;
     margin-bottom: 10px;
-         background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+    color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -759,10 +688,7 @@ body {
    font-size: 25px;
     padding: 5px;
     margin: 0;
-         background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+    color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 .section span{
@@ -770,10 +696,7 @@ body {
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-         background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+    color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     padding: 0;
     margin: 0;
@@ -843,14 +766,12 @@ footer {
   .section-wishes h2 {
     font-family: var(--font-title);
     font-size: 50px;
-         background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+    color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     font-style: italic;
     margin-bottom: 20px;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    font-weight: 400;
   }
   .section-wishes form {
     margin-bottom: 20px;
@@ -888,19 +809,13 @@ footer {
     display: block;
     font-family: var(--font-title);
     font-size: 1.2em;
-     background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   }
   .wish-card em {
     font-family: var(--font-text);
     font-style: italic;
-         background: linear-gradient(to right, #b8860b,   /* dorado oscuro */#ffd700,   /* dorado puro */#fff8dc,   /* reflejo claro */#ffd700,   /* dorado puro */#b8860b    /* dorado oscuro */);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: shine 1.5s infinite linear;
+    color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   }
 #magicEffect {

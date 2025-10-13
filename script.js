@@ -163,10 +163,10 @@ function confirmarAsistencia() {
 
 /* ---------- Mapas ---------- */
 function elegirAplicacion() {
-  window.open('https://maps.app.goo.gl/R6sdme5KopCdv4yaA', '_blank');
+  window.open('https://maps.app.goo.gl/um7kU95j9kxme6EB7', '_blank');
 }
 function elegirAplicacionOtraDireccion() {
-  window.open('https://maps.app.goo.gl/R6sdme5KopCdv4yaA', '_blank');
+  window.open('https://maps.app.goo.gl/um7kU95j9kxme6EB7', '_blank');
 }
 
 /* ---------- Buenos deseos (Firebase) ---------- */
