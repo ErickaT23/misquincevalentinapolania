@@ -70,5 +70,8 @@ window.invitados = {
   '68': { nombre: 'Arturo Mateus y Señora', pases: 2 },
   '69': { nombre: 'Nestor Cardoso y Señora', pases: 2 },
   '70': { nombre: 'Aramis Pendland', pases: 2 },
+  '71': { nombre: 'Eugenio Velasquez', pases: 1 },
+  '72': { nombre: 'Jim Verdin', pases: 2 },
+  '73': { nombre: 'Betty de Bernal ', pases: 2 }
 };
 
