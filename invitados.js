@@ -73,6 +73,7 @@ window.invitados = {
   '71': { nombre: 'Eugenio Velasquez', pases: 1 },
   '72': { nombre: 'Jim Verdin', pases: 2 },
   '73': { nombre: 'Betty de Bernal ', pases: 2 },
-  
+  '74': { nombre: 'Sofia Veliz', pases: 1 },
+  '75': { nombre: 'Alisa Vitola Hurtado', pases: 1 }
 };
 
