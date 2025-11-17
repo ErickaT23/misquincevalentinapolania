@@ -74,6 +74,9 @@ window.invitados = {
   '72': { nombre: 'Jim Verdin', pases: 2 },
   '73': { nombre: 'Betty de Bernal ', pases: 2 },
   '74': { nombre: 'Sofia Veliz', pases: 1 },
-  '75': { nombre: 'Alisa Vitola Hurtado', pases: 1 }
+  '75': { nombre: 'Alisa Vitola Hurtado', pases: 1 },
+  '76': { nombre: 'Karen Peralta', pases: 1 },
+  '77': { nombre: 'Sakura Gaston', pases: 1 },
+  '78': { nombre: 'Penelope Guillou', pases: 1 }
 };
 
